@@ -63,7 +63,8 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
+          "extraWebpackConfig": "src/webpack.config.js"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -75,13 +76,16 @@
               "browserTarget": "micro-app1:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "extraWebpackConfig": "src/webpack.config.js",
+					"publicHost": "http://localhost:4200"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "micro-app1:build"
-          }
+          },
+          "extraWebpackConfig": "src/webpack.config.js"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -103,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8e6a08c9-4ceb-44a7-9867-0c026fb5bee7"
   }
 }
